@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<style>
+    div ul li {
+        display: inline-block;
+        list-style: none;
+    }
+    .card{
+        background-color:rgba(113, 117, 246, 0.4);
+    }
+</style>
+
+<body>
+    <div class="container col-sm-4 col-md-7 col-lg-4">
+        <div class="card">
+            <p id="monthAndYear" style="text-align: center;font-size: 30px;"></p>
+            <span><i class="fa-solid fa-chevron-left" onclick="previous()"></i>
+
+                <i class="fa-solid fa-chevron-right" onclick="next()" style="margin-left: 450px;"></i> </span>
+
+            <table class="table table-bordered table-responsive-sm" id="calendar">
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+
+                <tbody id="calendar-body">
+
+                </tbody>
+            </table>
+            <br />
+            <p name="month" id="month"></p>
+            <p name="year" id="year"></p>
+        </div>
+    </div>
+    <!--<button name="jump" onclick="jump()">Go</button>-->
+    <script src="calendor.js"></script>
+
+    <!-- Optional JavaScript for bootstrap -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+
+</body>
+
+</html>

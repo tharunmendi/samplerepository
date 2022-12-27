@@ -1,0 +1,90 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+ 
+body{
+    background-color:rgba(0, 0,0, 0.01);
+    position: relative;
+}
+.main{
+height: 90px;
+padding: 22px;
+background-color:rgba(113, 117, 246, 0.4);
+color: black;
+
+
+}
+h1{
+    text-align: center ;
+} 
+button {
+    float: right;
+    
+
+   
+} 
+nav{
+    height: 86vh;
+    width: 20%;
+    background-color:rgba(235, 137, 137, 0.4);
+    float: left;
+}
+div{
+    position: relative;
+}
+div ul{
+    list-style-type: none;
+    position: absolute;
+    margin-top: 50px;
+    
+}
+div ul li {
+    margin-top: 80px;
+    font-size: 22px;
+    
+}
+div ul li a{
+  color: black;
+}
+th,td{
+border: 1px solid black;
+border-collapse: collapse;
+height: 40px;
+text-align: center;
+
+
+}
+th{
+    background-color:rgba(113, 117, 246, 0.4);
+}
+section{
+  
+    height: 84vh;
+    
+    
+}
+.namefields{
+   
+    margin-left: 350px;
+    font-size: 20px;
+}
+table{
+position: absolute;
+top: 230px;
+left: 500px;
+}
+.align{
+    margin: 350px 0px 0px 480px;
+}
+/* .GFG {
+    background-color: white;
+    border: 2px solid black;
+    color: green;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 30px;
+    cursor: pointer;
+} */

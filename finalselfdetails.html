@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+</head>
+<style>
+  .modal {
+    height: 650px;
+    width: 510px;
+    background-color: white;
+    margin-left: 500px;
+    margin-top: 50px;
+    border-radius: 5px;
+  }
+
+   .form-control {
+    width: 40%;
+  }
+
+  .add {
+
+    margin: 80px 330px 0px 0px;
+  }
+
+  .modal-footer {
+    height: 200px;
+    border: none;
+    
+
+  }
+
+  #close {
+    margin: -102px 20px 0px 0px;
+  }
+ /* self-details */
+ 
+ input[type=text]{
+    width: 1100px;
+    margin: 10px;
+ }
+ input[value] {
+
+font-weight: bold;
+
+color: black;
+}
+.mar {
+
+width: 200px;
+ float: right;
+ margin-right: 180px;
+ margin-top: 10px;
+ 
+}
+#input1 {
+      width: 1320px;
+      /* margin-left: 30px; */
+      font-size: 13.5px;
+      margin-top: 10px;
+    }
+    h2 {
+      color: blue;
+      margin: 10px;
+    }
+    #check{
+      margin-top: 25px;
+      margin-left: 15px;
+    }
+
+ 
+</style>
+
+<body>
+  <div class="container-fluid">
+    <h2>Self Details :</h2>
+    <input type="text" value="Number of pending applications : " disabled style="float: left;"> <input type="number" disabled
+    class="mar"> <br><br>
+    <input type="text" value="Number of rejected applications :" disabled style="float: left;"><input type="number"disabled
+    class="mar"> <br><br>
+
+  <input type="text" value="Absents as on today :" disabled style="float: left;"> <input type="number" disabled class="mar">
+  <br><br>
+
+  <input type="text" value="Comprehensive Earned Leave :" disabled style="float: left;"> <input type="number" disabled class="mar">
+  <br><br>
+
+  <input type="text" id="input1"
+    value="Note:Update Approver Functionally should be in case,approver has changes or left the organisation,and there are requests pending for his approval,and new approvel has been,updated in Recorder Plus"
+    disabled><br><br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Add Activity
+    </button>
+  </div>
+
+ <!-- model header -->
+  <div class="container-fluid modal" id="myModal">
+    <div class="modal-dialog" >
+      <div class="modal-content">
+        <form action="TrackerPageFinal.html" method="post">
+          <label> <b>Non-Billable :</b> </label> <br>
+          <select name="Non-Billable" id="Nb" class="form-control">
+            <option value="none">none</option>
+            <option value="Training">Training</option>
+            <option value="idle-hours">Idle-hours</option>
+          </select>
+          <br>
+          <br>
+          <label><b>Billable :</b> </label> <br>
+          <select name="Projects" id="pro" multiple="multiple" class="form-control">
+            <option value="none">none</option>
+            <option value="projects1">projects1</option>
+            <option value="projects2">projects2</option>
+            <option value="projects3">projects3</option>
+           
+          </select> <br>
+          
+          <!-- check boxes -->
+        
+          <div id="check">
+            <input id="dev" type="checkbox" value="Developer" name="designation"/><label for="dev">Developer</label>
+            <input id="test" type="checkbox" value="Tester" name="designation"/><label for="test">Tester</label>
+        
+        </div>
+          
+          
+          <br>
+          <label><b>Leaves</b> </label> <br>
+          <select name="Leave" class="form-control">
+            <option value="none">none</option>
+            <option value="Casual Leave">Casual Leave</option>
+            <option value="Sick Leave">Sick Leave</option>
+          </select><br>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success add" onclick="myFunction()"> Additems</button>
+            <button type="button" class="btn btn-danger"id="close" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+  function myFunction(){
+  var s1=document.getElementById('Nb').value;
+  var s2=document.getElementById('pro').value;
+
+  var s3=document.getElementsByName('designation');
+           var selectedItems="";
+           for(var i=0; i<s3.length; i++){
+        if( s3[i].type=='checkbox' &&  s3[i].checked==true)
+            selectedItems+= s3[i].value+"\n";
+           }
+
+    localStorage.setItem("set1",s1);
+    localStorage.setItem("set2",s2);
+    localStorage.setItem("set3",selectedItems);
+    return false;
+    }
+  </script>
+    <script>
+       $(document).ready(function() {  
+            $('#pro').multiselect();  
+        });
+    </script>
+  <script type="text/javascript">
+    window.onload = function () {
+        var tblFruits = document.getElementById("check");
+        var chks = tblFruits.getElementsByTagName("INPUT");
+        for (var i = 0; i < chks.length; i++) {
+            chks[i].onclick = function () {
+                for (var i = 0; i < chks.length; i++) {
+                    if (chks[i] != this && this.checked) {
+                        chks[i].checked = false;
+                    }
+                }
+            };
+        }
+    };
+</script>
+</body>
+</html>
